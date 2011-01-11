@@ -6,7 +6,7 @@
 <!doctype html>
 <html <?php language_attributes(); ?> >
 <link rel=stylesheet href="<?php echo get_stylesheet_uri(); ?>">
-<title><?php wp_title( ':', 0 ); ?></title>
+<title><?php wp_title( ':' ); ?></title>
 <?php wp_head(); ?>
 
 <body <?php body_class(); ?>>
