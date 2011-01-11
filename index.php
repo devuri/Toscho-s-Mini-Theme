@@ -6,11 +6,10 @@
 <!doctype html>
 <html <?php language_attributes(); ?> >
 <link rel=stylesheet href="<?php echo get_stylesheet_uri(); ?>">
-<title><?php wp_title( ':' ); ?></title>
+<title><?php wp_title( ' ' ); ?></title>
 <?php wp_head(); ?>
 
 <body <?php body_class(); ?>>
-
 <ul><?php wp_list_pages( array ( 'title_li' => FALSE ) ); ?></ul>
 
 <h1><?php the_title(); ?></h1>
@@ -18,7 +17,7 @@
 <?php
 if ( have_posts() )
 {
-	is_singular() and print '<ul>';
+	! is_singular() and print '<ul>';
 
 	while ( have_posts() )
 	{
