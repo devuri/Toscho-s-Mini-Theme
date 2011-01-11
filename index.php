@@ -6,18 +6,7 @@
 <!doctype html>
 <html <?php language_attributes(); ?> >
 <link rel=stylesheet href="<?php echo get_stylesheet_uri(); ?>">
-<?php
-if ( ! class_exists( 'wpSEO' ) )
-{
-?>
-<title><?php wp_title(); ?></title>
-<?php
-}
-else
-{
-	do_action('wpseo_template_output');
-}
-?>
+<title><?php wp_title( ':', 0 ); ?></title>
 <?php wp_head(); ?>
 
 <body <?php body_class(); ?>>
@@ -51,7 +40,8 @@ if ( have_posts() )
 
 		print is_singular() ? "</div>\n" : "</li>\n";
 	}
-			comments_template();
+
+	comments_template();
 
 	! is_singular() and print '</ul>';
 }
@@ -62,8 +52,5 @@ else
 	<?php
 }
 
-if ( is_singular() && get_option( 'thread_comments' ) )
-{
-	wp_print_scripts( 'comment-reply' );
-}
+is_singular() and get_option( 'thread_comments' ) and wp_print_scripts( 'comment-reply' );
 wp_footer();
