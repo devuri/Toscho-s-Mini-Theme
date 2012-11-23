@@ -1,18 +1,8 @@
 /*
 Theme Name:    Toscho’s Mini Theme
 Description:   Sample Theme for Debug Purposes
-Version:       0.1
+Version:       2012.11.23
 Author:        Thomas Scholz
 Author URI:    http://toscho.de/
 Author E-Mail: info@toscho.com
 */
-body
-{
-	margin:			0;
-	padding:		20px 10%;
-	font:			1em/1.4 Georgia, serif;
-}
-#commentform label
-{
-	display:		block;
-}
