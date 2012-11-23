@@ -1,8 +1,3 @@
-<?php # -*- coding: utf-8 -*-
-/**
- * @package Toscho’s Mini Theme
- */
-?>
 <!doctype html>
 <html <?php language_attributes(); ?> >
 <link rel=stylesheet href="<?php echo get_stylesheet_uri(); ?>">
