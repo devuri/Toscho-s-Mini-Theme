@@ -7,6 +7,8 @@ if ( $comments )
 	<ol class="commentlist">
 	<?php
 	wp_list_comments();
+	previous_comments_link();
+	next_comments_link();
 	?></ol>
 	<?php
 }

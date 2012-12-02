@@ -35,9 +35,18 @@ else
 	<?php
 }
 
-is_singular()
-	and get_option( 'thread_comments' )
+if ( is_singular() )
+{
+	get_option( 'thread_comments' )
 	and comments_open( get_the_ID() )
 	and wp_enqueue_script( 'comment-reply' );
 
+	previous_post_link();
+	next_post_link();
+}
+else
+{
+	previous_posts_link();
+	next_posts_link();
+}
 wp_footer();
