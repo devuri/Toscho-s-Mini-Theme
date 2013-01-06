@@ -12,4 +12,4 @@ if ( $comments )
 	?></ol>
 	<?php
 }
-comments_open( get_the_ID() ) and comment_form();
+comments_open() && comment_form();
