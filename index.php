@@ -2,8 +2,8 @@
 <html <?php language_attributes(); ?> >
 <link rel=stylesheet href="<?php echo get_stylesheet_uri(); ?>">
 <title><?php
-$title = wp_title( ' ', FALSE );
-print empty ( $title ) ? get_bloginfo( 'name' ) : $title;
+$title = trim( wp_title( ' ', FALSE ) );
+print '' === $title ? get_bloginfo( 'name' ) : $title;
 ?></title>
 <?php wp_head(); ?>
 
@@ -16,17 +16,11 @@ if ( have_posts() )
 	while ( have_posts() )
 	{
 		the_post();
-
 		print '<div class="' . join( ' ', get_post_class() ) . '">' . "\n\t";
-
 		print '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
 		the_content();
 		wp_link_pages();
-
-		print '</div>';
 	}
-
-	comments_template();
 }
 else
 {
@@ -37,6 +31,7 @@ else
 
 if ( is_singular() )
 {
+	post_password_required() || comments_template();
 	get_option( 'thread_comments' )
 	and comments_open( get_the_ID() )
 	and wp_enqueue_script( 'comment-reply' );
