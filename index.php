@@ -16,8 +16,8 @@ if ( have_posts() )
 	while ( have_posts() )
 	{
 		the_post();
-		print '<div class="' . join( ' ', get_post_class() ) . '">' . "\n\t";
-		print '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
+		print '<div class="' . join( ' ', get_post_class() ) . '">' . "\n\t"
+			. '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
 		the_content();
 		wp_link_pages();
 		print '</div>';
