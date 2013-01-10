@@ -20,6 +20,7 @@ if ( have_posts() )
 		print '<h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
 		the_content();
 		wp_link_pages();
+		print '</div>';
 	}
 }
 else
