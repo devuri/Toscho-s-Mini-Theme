@@ -2,8 +2,8 @@
 <html <?php language_attributes(); ?> >
 <link rel=stylesheet href="<?php echo get_stylesheet_uri(); ?>">
 <title><?php
-$title = trim( wp_title( ' ', FALSE ) );
-print '' === $title ? get_bloginfo( 'name' ) : $title;
+	$title = trim( wp_title( ' ', FALSE ) );
+	print '' === $title ? get_bloginfo( 'name' ) : $title;
 ?></title>
 <?php wp_head(); ?>
 
